@@ -1,0 +1,243 @@
+{
+  "FD001": {
+    "models": {
+      "lightgbm": {
+        "rmse": 12.202510179627199,
+        "mae": 9.427787971283369,
+        "nasa_score": 215.971860554309,
+        "seeds": 1,
+        "val_rmse": 11.851511766040328
+      },
+      "lstm": {
+        "rmse": 13.405450820922852,
+        "mae": 9.820634524027506,
+        "nasa_score": 308.90038045247394,
+        "rmse_std": 0.13680647745564883,
+        "mae_std": 0.03874296917121474,
+        "nasa_score_std": 14.533298509257111,
+        "seeds": 3,
+        "n_params": 55873
+      },
+      "tcn": {
+        "rmse": 14.21490478515625,
+        "mae": 10.118183453877768,
+        "nasa_score": 324.7922770182292,
+        "rmse_std": 0.6883330392335794,
+        "mae_std": 0.2702044530008706,
+        "nasa_score_std": 26.416426240033466,
+        "seeds": 3,
+        "n_params": 92289
+      },
+      "transformer": {
+        "rmse": 14.6459592183431,
+        "mae": 10.761475880940756,
+        "nasa_score": 412.2528584798177,
+        "rmse_std": 0.5232573724150787,
+        "mae_std": 0.2412470752070427,
+        "nasa_score_std": 68.97022590389528,
+        "seeds": 3,
+        "n_params": 105793
+      },
+      "ensemble": {
+        "rmse": 12.371427418730041,
+        "mae": 9.024821045964613,
+        "nasa_score": 233.7132356719199,
+        "seeds": 1,
+        "members": "transformer+lightgbm"
+      }
+    },
+    "selection_val_rmse": {
+      "transformer": 12.694558143615723,
+      "lightgbm": 11.851511766040328,
+      "ensemble(transformer+lightgbm)": 11.432475087636373
+    },
+    "selected_model": "ensemble(transformer+lightgbm)",
+    "best_deep_model": "transformer",
+    "selected_test": {
+      "rmse": 12.371427418730041,
+      "mae": 9.024821045964613,
+      "nasa_score": 233.7132356719199
+    },
+    "conformal": {
+      "target_coverage": 0.9,
+      "split": {
+        "coverage": 0.9,
+        "mean_width": 38.49885232454467,
+        "lower_bound_violations": 0.03
+      },
+      "mondrian": {
+        "coverage": 0.9,
+        "mean_width": 37.739381778227674,
+        "lower_bound_violations": 0.03
+      },
+      "split_near_failure_width": 35.24251806996089,
+      "mondrian_near_failure_width": 19.11039742689034,
+      "mondrian_band_halfwidths": {
+        "0": 9.223473859267735,
+        "1": 29.975664894762133,
+        "2": 20.556171141081037
+      }
+    },
+    "explanation_method": "mean of IG (deep) and TreeSHAP (GBM)",
+    "sensor_importance_top_risk": {
+      "s_11 - HPC static pressure (Ps30)": 0.1889,
+      "s_4 - LPT outlet temp (T50)": 0.1395,
+      "s_12 - Fuel flow / Ps30 (phi)": 0.0924,
+      "s_7 - HPC outlet pressure (P30)": 0.091,
+      "s_13 - Corrected fan speed (NRf)": 0.0732,
+      "s_8 - Physical fan speed (Nf)": 0.0638,
+      "s_15 - Bypass ratio (BPR)": 0.0603,
+      "s_20 - HPT coolant bleed (W31)": 0.0572,
+      "s_2 - LPC outlet temp (T24)": 0.0528,
+      "s_9 - Physical core speed (Nc)": 0.0434,
+      "s_21 - LPT coolant bleed (W32)": 0.0413,
+      "s_17 - Bleed enthalpy (htBleed)": 0.0406,
+      "s_14 - Corrected core speed (NRc)": 0.0307,
+      "s_3 - HPC outlet temp (T30)": 0.0251
+    },
+    "fleet_plan": {
+      "optimized": {
+        "total_cost": 13605500.0,
+        "in_service_failures": 1,
+        "shop_visits": 40,
+        "wasted_cycles": 737.0
+      },
+      "threshold_rule": {
+        "total_cost": 41653500.0,
+        "in_service_failures": 14,
+        "shop_visits": 25,
+        "wasted_cycles": 269.0
+      },
+      "savings_usd": 28048000.0,
+      "cost_model": {
+        "planned": 250000,
+        "failure": 2500000,
+        "waste_per_cycle": 1500,
+        "cycles_per_day": 2.0,
+        "hangar_slots": 3,
+        "horizon_days": 30
+      }
+    }
+  },
+  "FD003": {
+    "models": {
+      "lightgbm": {
+        "rmse": 12.630455858594042,
+        "mae": 9.069971251725915,
+        "nasa_score": 303.2808266732661,
+        "seeds": 1,
+        "val_rmse": 10.679186454933486
+      },
+      "lstm": {
+        "rmse": 14.024420420328775,
+        "mae": 10.352584838867188,
+        "nasa_score": 396.4249674479167,
+        "rmse_std": 0.20651086282182307,
+        "mae_std": 0.2873450789319012,
+        "nasa_score_std": 28.915954569234266,
+        "seeds": 3,
+        "n_params": 56129
+      },
+      "tcn": {
+        "rmse": 16.184370040893555,
+        "mae": 11.064261754353842,
+        "nasa_score": 1087.9360758463542,
+        "rmse_std": 0.3404116881250015,
+        "mae_std": 0.36321591598924835,
+        "nasa_score_std": 173.38892418292085,
+        "seeds": 3,
+        "n_params": 92545
+      },
+      "transformer": {
+        "rmse": 13.572851498921713,
+        "mae": 9.32846705118815,
+        "nasa_score": 421.90069580078125,
+        "rmse_std": 0.5995087597310275,
+        "mae_std": 0.42714022171630756,
+        "nasa_score_std": 73.83376201613764,
+        "seeds": 3,
+        "n_params": 105857
+      },
+      "ensemble": {
+        "rmse": 12.111162836224617,
+        "mae": 8.384107970493249,
+        "nasa_score": 307.9899698393708,
+        "seeds": 1,
+        "members": "transformer+lightgbm"
+      }
+    },
+    "selection_val_rmse": {
+      "transformer": 8.052085876464844,
+      "lightgbm": 10.679186454933486,
+      "ensemble(transformer+lightgbm)": 8.467060709328058
+    },
+    "selected_model": "transformer",
+    "best_deep_model": "transformer",
+    "selected_test": {
+      "rmse": 12.844429969787598,
+      "mae": 8.726044654846191,
+      "nasa_score": 367.3054504394531
+    },
+    "conformal": {
+      "target_coverage": 0.9,
+      "split": {
+        "coverage": 0.92,
+        "mean_width": 44.233558654785156,
+        "lower_bound_violations": 0.07
+      },
+      "mondrian": {
+        "coverage": 0.91,
+        "mean_width": 44.8080180644989,
+        "lower_bound_violations": 0.07
+      },
+      "split_near_failure_width": 40.439640045166016,
+      "mondrian_near_failure_width": 19.54050805351951,
+      "mondrian_band_halfwidths": {
+        "0": 8.968635559082031,
+        "1": 26.958560943603516,
+        "2": 25.347885131835938
+      }
+    },
+    "explanation_method": "Integrated Gradients",
+    "sensor_importance_top_risk": {
+      "s_12 - Fuel flow / Ps30 (phi)": 0.23280000686645508,
+      "s_7 - HPC outlet pressure (P30)": 0.20260000228881836,
+      "s_8 - Physical fan speed (Nf)": 0.1160999983549118,
+      "s_13 - Corrected fan speed (NRf)": 0.09269999712705612,
+      "s_9 - Physical core speed (Nc)": 0.0617000013589859,
+      "s_14 - Corrected core speed (NRc)": 0.050200000405311584,
+      "s_11 - HPC static pressure (Ps30)": 0.0471000000834465,
+      "s_6 - s_6": 0.04039999842643738,
+      "s_4 - LPT outlet temp (T50)": 0.03550000116229057,
+      "s_15 - Bypass ratio (BPR)": 0.031300000846385956,
+      "s_21 - LPT coolant bleed (W32)": 0.02419999986886978,
+      "s_20 - HPT coolant bleed (W31)": 0.02250000089406967,
+      "s_3 - HPC outlet temp (T30)": 0.017899999395012856,
+      "s_17 - Bleed enthalpy (htBleed)": 0.012600000016391277,
+      "s_2 - LPC outlet temp (T24)": 0.012400000356137753
+    },
+    "fleet_plan": {
+      "optimized": {
+        "total_cost": 19072500.0,
+        "in_service_failures": 2,
+        "shop_visits": 49,
+        "wasted_cycles": 1215.0
+      },
+      "threshold_rule": {
+        "total_cost": 60063500.0,
+        "in_service_failures": 22,
+        "shop_visits": 19,
+        "wasted_cycles": 209.0
+      },
+      "savings_usd": 40991000.0,
+      "cost_model": {
+        "planned": 250000,
+        "failure": 2500000,
+        "waste_per_cycle": 1500,
+        "cycles_per_day": 2.0,
+        "hangar_slots": 3,
+        "horizon_days": 30
+      }
+    }
+  }
+}
