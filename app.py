@@ -24,7 +24,7 @@ c3.metric("In-service failures (plan vs rule)", f"{f['optimized']['in_service_fa
 c4.metric("Realized savings vs alert rule", f"${f['savings_usd'] / 1e6:,.1f}M")
 
 st.subheader("Maintenance plan (MILP, capacity-constrained)")
-st.dataframe(plan.head(40), use_container_width=True, height=360)
+st.dataframe(plan.head(40), width="stretch", height=360)
 
 st.subheader("Engine drill-down")
 unit = st.selectbox("Engine", fleet.sort_values("pred_rul").unit.tolist())
@@ -33,7 +33,7 @@ fig = go.Figure()
 fig.add_trace(go.Bar(x=["RUL"], y=[row.upper_90 - row.lower_90], base=[row.lower_90], name="90% interval", marker_color="#8fb3e8"))
 fig.add_trace(go.Scatter(x=["RUL"], y=[row.pred_rul], mode="markers", marker=dict(size=16, color="#1f4e9c"), name="prediction"))
 fig.update_layout(height=300, yaxis_title="cycles remaining")
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width="stretch")
 st.write(f"Guaranteed (90%) lower bound: **{row.lower_90:.0f} cycles** · point estimate {row.pred_rul:.0f}")
 
 st.subheader("What drives risk (Integrated Gradients, top-10 at-risk engines)")
